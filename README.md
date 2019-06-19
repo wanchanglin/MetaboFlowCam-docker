@@ -1,6 +1,24 @@
-# MetaboFlowCam Docker#
+# MetaboFlowCam Galaxy Docker #
 
 ## Description ##
+
+`MetaboFlowCam` docker includes Galaxy metabolomics analysis tools developed
+in Jules Group of University of Cambridge:
+
+- [massPix](https://GitHub.com/wanchanglin/massPix): processes high
+  resolution mass spectrometry imaging data, performs multivariate
+  statistics (PCA, clustering) and lipid identification.
+
+- [dimsp](https://GitHub.com/wanchanglin/dimsp): processes and filter
+  Direct-Infusion Mass Spectrometry (DIMS) based lipidomics data.
+
+- [isolab](https://GitHub.com/wanchanglin/isolab): analyses mass
+  spectrometric isotopic patterns obtained following isotopic labelling
+  experiments.
+
+- [lcms](https://GitHub.com/wanchanglin/lcms):LC-MS data deisotoping and
+  annotation for metabolomics analysis
+
 
 ## Installation for Windows ##
 
@@ -19,42 +37,42 @@ procedure](https://docs.docker.com/toolbox/toolbox_install_windows/).
 
 ### Docker image ###
 
-To build MetaboFlowCam Docker image, do the following steps:
+To build `MetaboFlowCam` docker image, do the following steps:
 
 - Launch Docker toolbox. Either click `Docker Quickstart Terminal` icon or
   run `start.sh` in a bash terminal (such as `cygwin`, `msys2` or `git-bash`
   if you have installed)
 
-- Use `git clone` to get `Dockerfile`:
+- Get `Dockerfile`I via `git`:
 
-  ```
+  ```bash
   git clone https://github.com/wanchanglin/MetaboFlowCam-docker.git
   ```
 
-- Go the directory and run:
+- Go the directory to build docker image:
  
   ```bash
-  $ cd MetaboFlowCam-docker
-  $ docker build -t cam/metaboflow .
+  $ cd MetaboFlowCam-docker           ## go to Dockerfile directory
+  $ docker build -t cam/metaboflow .  ## build docker image
   $ docker images                     ## check built image
   ```
 
 ## Usages ##
 
-There are two modes to run `MetaboFlowCam`. For general users, launch it in
-Detached/Daemon mode:
+There are two modes to run `MetaboFlowCam`. For general user, launch it in
+detached/daemon mode:
 
-```
+```bash
 $ docker run -d -p 8080:80 cam/metaboflow 
 ```
 
-In your open web browser (Chrome, Firefox or IE), access address
-`192.168.99.100:8080` and you should find that `MetaboFlowCam` is running.
+You can access `MetaboFlowCam` in web browser (Chrome, Firefox or IE) via
+address `192.168.99.100:8080`.
 
-The advanced users can run it in interactive mode:
+The advanced user can launch in interactive mode:
 
-```
-$ docker run -it -p 8080:80 bcam/metaboflow /bin/bash
+```bash
+$ docker run -it -p 8080:80 cam/metaboflow /bin/bash  ## interactive mode
 $ startup                           ## start PostgreSQL, nginx and Galaxy.
 ```
 
@@ -67,21 +85,21 @@ Some notes for advanced users:
   docker initialisation (mainly for installation of tool dependencies). To 
   do so, you can re-use the docker container you has run previously.
 
-  ```
+  ```bash
   ### list all containers
   $ docker ps -a                 
   ### Restart one stopped containers (not use "docker restart")
   $ docker start -ai container_id_or_name      ## must give -ai
   ```
 
-  here `container_id_or_name` is your `MetaboFlowCam` container. The
+  here `container_id_or_name` is your `MetaboFlowCam` container ID. The
   re-starting begins from the point you have stopped before. In other words,
-  Galaxy docker does not re-install any dependencies of tools and all the
+  Galaxy docker does not re-install any tool dependencies and all the
   loading data and running results are still there for you references. 
 
 - Docker toolbox is based on Virtual Box. Even you exit docker toolbox, it
   is still running under Virtual Box. To completely exit docker toolbox,
-  either stop it in Virtual Box main GUI, or run in bash terminal:
+  either stop it in Virtual Box main GUI, or run in a bash terminal:
 
   ```bash
   $ docker-machine kill default
@@ -90,3 +108,8 @@ Some notes for advanced users:
   Without this procedure, windows will pop up a message saying something is
   still running when you shut down your computer.
 
+## Authors, contributors & contacts ##
+
+- Wanchang Lin (wl361@cam.ac.uk), University of Cambridge 
+- Zoe Hall (zlh22@cam.ac.uk), University of Cambridge 
+- Julian L Griffin (jlg40@cam.ac.uk), University of Cambridge 
