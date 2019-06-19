@@ -16,8 +16,8 @@ in Jules Group of University of Cambridge:
   spectrometric isotopic patterns obtained following isotopic labelling
   experiments.
 
-- [lcms](https://GitHub.com/wanchanglin/lcms):LC-MS data deisotoping and
-  annotation for metabolomics analysis
+- [lcms](https://GitHub.com/wanchanglin/lcms): LC-MS data deisotoping and
+  annotation for metabolomics analysis.
 
 
 ## Installation for Windows ##
@@ -39,14 +39,16 @@ procedure](https://docs.docker.com/toolbox/toolbox_install_windows/).
 
 To build `MetaboFlowCam` docker image, do the following steps:
 
-- Launch docker toolbox. Either click `Docker Quickstart Terminal` icon or
-  run `start.sh` in a bash terminal (such as `cygwin`, `msys2` or `git-bash`
-  if you have installed)
+- Launch docker toolbox.
+ 
+  Either click `Docker Quickstart Terminal` icon or run `start.sh` in a
+  bash terminal (such as `cygwin`, `msys2` or `git-bash` if you have
+  installed)
 
 - Get `Dockerfile` via `git`:
 
   ```bash
-  git clone https://github.com/wanchanglin/MetaboFlowCam-docker.git
+  $ git clone https://github.com/wanchanglin/MetaboFlowCam-docker.git
   ```
 
 - Go the directory to build docker image:
