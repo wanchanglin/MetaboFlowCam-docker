@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<toolbox monitor="true">
+  
+  <section id="getext" name="Get Data">
+    <tool file="data_source/upload.xml" />
+  </section>
+  
+  <section id="tools_cam" name="Cambridge Metabolomics Tools">
+    <tool file="/home/galaxy/tools_cam/dimsp/dimsp.xml" />
+    <tool file="/home/galaxy/tools_cam/dimsp/dimsp_filter.xml" />
+    <tool file="/home/galaxy/tools_cam/isolab/isolab.xml" />
+    <tool file="/home/galaxy/tools_cam/massPix/massPix.xml" />
+    <tool file="/home/galaxy/tools_cam/massPix/lcms.xml" />
+  </section>
+
+</toolbox>
