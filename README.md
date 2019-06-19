@@ -39,11 +39,11 @@ procedure](https://docs.docker.com/toolbox/toolbox_install_windows/).
 
 To build `MetaboFlowCam` docker image, do the following steps:
 
-- Launch Docker toolbox. Either click `Docker Quickstart Terminal` icon or
+- Launch docker toolbox. Either click `Docker Quickstart Terminal` icon or
   run `start.sh` in a bash terminal (such as `cygwin`, `msys2` or `git-bash`
   if you have installed)
 
-- Get `Dockerfile`I via `git`:
+- Get `Dockerfile` via `git`:
 
   ```bash
   git clone https://github.com/wanchanglin/MetaboFlowCam-docker.git
